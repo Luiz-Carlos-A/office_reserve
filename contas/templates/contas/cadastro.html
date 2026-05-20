@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center login-container">
+
+    <div class="card shadow-lg p-4 login-card register-card">
+
+        <h3 class="text-center mb-4">Criar conta</h3>
+
+        {% if erro %}
+            <div class="alert alert-danger">{{ erro }}</div>
+        {% endif %}
+
+        <form method="POST" onsubmit="return validarSenha()">
+            {% csrf_token %}
+
+            <!-- NOME -->
+            <div class="mb-3 input-icon">
+                <span>👤</span>
+                <input type="text" name="nome" class="form-control" placeholder="Seu nome completo">
+            </div>
+
+            <!-- EMAIL -->
+            <div class="mb-3 input-icon">
+                <span>📧</span>
+                <input type="email" name="email" class="form-control" placeholder="Seu e-mail">
+            </div>
+
+            <!-- SENHA -->
+            <div class="mb-3 input-icon">
+                <span>🔒</span>
+                <input id="senha1" type="password" name="senha" class="form-control" placeholder="Crie uma senha">
+                
+                <span class="material-symbols-outlined toggle-password" onclick="togglePasswordCadastro('senha1', this)">
+                    visibility
+                </span>
+            </div>
+
+            <!-- REPETIR SENHA -->
+            <div class="mb-3 input-icon">
+                <span>🔒</span>
+                <input id="senha2" type="password" name="senha2" class="form-control" placeholder="Repita a senha">
+                
+                <span class="material-symbols-outlined toggle-password" onclick="togglePasswordCadastro('senha2', this)">
+                    visibility
+                </span>
+            </div>
+
+            <button class="btn btn-primary w-100">Cadastrar</button>
+        </form>
+
+        <p class="text-center mt-3">
+            Já possui conta?
+            <a href="/login/">Entrar</a>
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}

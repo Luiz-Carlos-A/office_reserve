@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Detalhes da Mesa{% endblock %}
+
+{% block content %}
+<h3>Detalhes da Mesa {{ mesa.nome }}</h3>
+
+<p><strong>Status:</strong> 
+    {% if mesa.ocupada %}
+        <span class="text-danger">Ocupada</span>
+    {% else %}
+        <span class="text-success">Livre</span>
+    {% endif %}
+</p>
+
+<p><strong>Posição:</strong> ({{ mesa.pos_x }}px, {{ mesa.pos_y }}px)</p>
+
+<a href="#" class="btn btn-primary">Reservar</a>
+
+{% endblock %}

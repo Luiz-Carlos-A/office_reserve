@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Mapa do Escritório{% endblock %}
+
+{% block content %}
+
+<div class="mapa-container">
+
+    <div class="mapa-wrapper">
+
+        <!-- TÍTULO -->
+        <h3 class="text-center mb-3">Mapa do Escritório</h3>
+
+        <!-- STATUS -->
+        <div class="text-center mb-4">
+            <span class="badge bg-danger me-2">{{ porcent_ocupadas }}% ocupadas</span>
+            <span class="badge bg-success">{{ porcent_livres }}% livres</span>
+        </div>
+
+        <!-- MAPA -->
+        <div class="mapa-area">
+            <img id="mapa-escritorio" src="{% static 'escritorio.png' %}">
+
+            <!-- MESAS -->
+            {% for mesa in mesas %}
+                <a href="{% url 'mesa_detalhe' mesa.id %}" 
+                   class="mesa"
+                   style="
+                        top: {{ mesa.pos_y }}px;
+                        left: {{ mesa.pos_x }}px;
+                        background-color: {% if mesa.ocupada %}red{% else %}green{% endif %};
+                   "
+                   title="{{ mesa.nome }}">
+                </a>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

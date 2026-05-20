@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center login-container">
+
+    <div class="card shadow-lg p-4 login-card">
+        <h3 class="text-center mb-4">Entrar</h3>
+
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                Usuário ou senha incorretos.
+            </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- EMAIL -->
+            <div class="mb-3 input-icon">
+                <span>📧</span>
+                <input type="text" name="username" class="form-control input-custom" placeholder="Digite seu e-mail">
+            </div>
+
+            <!-- SENHA COM OLHO PROFISSIONAL -->
+            <div class="mb-3 input-icon">
+                <span>🔒</span>
+                <input id="password" type="password" name="password" class="form-control input-custom" placeholder="Digite sua senha">
+                
+                <span class="material-symbols-outlined toggle-password"
+                  onclick="togglePassword(this)">
+                     visibility
+                </span>
+            </div>
+
+            <button class="btn btn-primary w-100 btn-custom">Entrar</button>
+        </form>
+
+        <p class="text-center mt-3">
+            Não tem conta?
+            <a href="/cadastro/">Cadastre-se</a>
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}

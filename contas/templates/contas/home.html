@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <!-- 👋 SAUDAÇÃO -->
+    <div class="mb-4">
+        <h3>👋 Olá, {{ user.username }}</h3>
+        <p class="text-muted">Pronto para reservar seu espaço?</p>
+    </div>
+
+    <!-- 🔥 BOTÃO PRINCIPAL -->
+    <div class="text-center mb-5">
+        <a href="/mesas/mapa/" class="btn btn-primary btn-lg px-5 py-3">
+            🗺️ Abrir Mapa e Reservar
+        </a>
+    </div>
+
+    <!-- 📅 MINHAS RESERVAS -->
+    <div class="card p-4 mb-4">
+        <h5 class="mb-3">📅 Minhas Reservas</h5>
+
+        {% if reservas %}
+            <ul class="list-group list-group-flush">
+
+                {% for reserva in reservas %}
+                    <li class="list-group-item bg-transparent text-white d-flex justify-content-between">
+
+                        <div>
+                            <strong>{{ reserva.mesa }}</strong><br>
+                            <small>{{ reserva.data }}</small>
+                        </div>
+
+                        <span class="badge bg-info">
+                            Ativa
+                        </span>
+
+                    </li>
+                {% endfor %}
+
+            </ul>
+        {% else %}
+            <p class="text-muted">Você ainda não possui reservas.</p>
+        {% endif %}
+    </div>
+
+    <!-- 📊 STATUS -->
+    <div class="row">
+
+        <div class="col-md-6 mb-3">
+            <div class="card text-center p-4">
+                <h6>🪑 Mesas disponíveis</h6>
+                <h2>{{ mesas_livres }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card text-center p-4">
+                <h6>📅 Reservas hoje</h6>
+                <h2>{{ reservas_do_dia }}</h2>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

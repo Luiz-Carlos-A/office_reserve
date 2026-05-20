@@ -1,0 +1,299 @@
+/* ===================================================== */
+/* 🌌 FUNDO GLOBAL (TEMA ESCURO PREMIUM) */
+/* ===================================================== */
+
+body {
+    background: linear-gradient(135deg, #0a0f1c, #111827, #1f2937);
+    min-height: 100vh;
+}
+
+
+/* ===================================================== */
+/* 📦 CARDS (PADRÃO DO SISTEMA) */
+/* ===================================================== */
+
+.card {
+    background: rgba(17, 25, 40, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Efeito leve ao passar o mouse */
+.card:hover {
+    transform: scale(1.02);
+}
+
+
+/* ===================================================== */
+/* 📝 INPUTS E FORMULÁRIOS */
+/* ===================================================== */
+
+/* Container com ícone */
+.input-icon {
+    position: relative;
+}
+
+/* Ícone dentro do input */
+.input-icon span:first-child {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bbb;
+}
+
+/* Input padrão */
+.form-control {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 10px;
+
+    padding: 10px;
+    padding-left: 40px;
+}
+
+/* Placeholder */
+.form-control::placeholder {
+    color: #bbb;
+}
+
+/* Foco no input */
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 1px solid #4facfe;
+    box-shadow: 0 0 8px rgba(79, 172, 254, 0.5);
+}
+
+
+/* ===================================================== */
+/* 🔘 BOTÕES */
+/* ===================================================== */
+
+.btn-primary {
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 242, 254, 0.4);
+}
+
+/* Botão de perigo (logout) */
+.btn-danger {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(255, 0, 0, 0.3);
+}
+
+
+/* ===================================================== */
+/* 🔗 LINKS */
+/* ===================================================== */
+
+a {
+    color: #4facfe;
+}
+
+a:hover {
+    color: #00f2fe;
+}
+
+
+/* ===================================================== */
+/* 🔐 LOGIN / CADASTRO */
+/* ===================================================== */
+
+/* Centralização da tela */
+.login-container {
+    min-height: calc(100vh - 70px); /* desconta navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Card padrão */
+.login-card {
+    max-width: 420px;
+    width: 100%;
+    padding: 30px;
+
+    animation: fadeInUp 0.6s ease;
+}
+
+/* Card maior (cadastro) */
+.register-card {
+    max-width: 480px;
+}
+
+
+/* ===================================================== */
+/* 👁️ TOGGLE DE SENHA */
+/* ===================================================== */
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    cursor: pointer;
+    color: #bbb;
+    font-size: 22px;
+
+    transition: 0.3s;
+}
+
+.toggle-password:hover {
+    color: #4facfe;
+}
+
+
+/* ===================================================== */
+/* ⚙️ CORREÇÃO AUTOFILL (CHROME) */
+/* ===================================================== */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.08) inset !important;
+    -webkit-text-fill-color: white !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
+/* ===================================================== */
+/* 🎬 ANIMAÇÕES */
+/* ===================================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===================================================== */
+/* 🧭 NAVBAR */
+/* ===================================================== */
+
+.custom-navbar {
+    background: rgba(1, 10, 14, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(79, 172, 254, 0.15);
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-btn {
+    color: #ddd !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    color: #4facfe !important;
+    transform: translateY(-1px);
+}
+
+
+/* ===================================================== */
+/* 🗺️ MAPA DO ESCRITÓRIO */
+/* ===================================================== */
+
+/* Centraliza tudo */
+.mapa-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Card do mapa */
+.mapa-wrapper {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(12px);
+
+    border-radius: 18px;
+    padding: 25px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+
+    width: 100%;
+    max-width: 950px;
+}
+
+/* Área do mapa */
+.mapa-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* Imagem */
+#mapa-escritorio {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+}
+
+/* Bolinhas (mesas) */
+.mesa {
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+    border: 2px solid white;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Hover nas mesas */
+.mesa:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+
+/* ===================================================== */
+/* 🌫️ TEXTOS SECUNDÁRIOS */
+/* ===================================================== */
+
+.text-muted {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
